@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quiz application</string>
+    <string name="quiz_app">Quiz App</string>
+    <string name="available_quizzes">Available quizzes</string>
+    <string name="completed_quizzes">Completed quizzes</string>
+    <string name="quiz">Quiz</string>
+    <string name="create">create</string>
+    <string name="sign_as_admin">Sign as admin</string>
+    <string name="sign_in">sign in</string>
+    <string name="continue_as_user">Continure as user</string>
+    <string name="continue_">continue</string>
+    <string name="add_question">add question</string>
+</resources>
