@@ -19,6 +19,7 @@ import java.util.List;
 
 public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizRecyclerViewAdapter.QuizViewHolder> {
 
+    public static final String QUIZ_ID = "quizId";
     private List<QuizModel> quizModelList;
 
     public QuizRecyclerViewAdapter(List<QuizModel> list) {
@@ -45,7 +46,7 @@ public class QuizRecyclerViewAdapter extends RecyclerView.Adapter<QuizRecyclerVi
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(viewHolder.getCv_quizHolder().getContext(), QuestionsActivity.class);
-                i.putExtra("quizId", quizModelList.get(position).getId());
+                i.putExtra(QUIZ_ID, quizModelList.get(position).getId());
                 viewHolder.getCv_quizHolder().getContext().startActivity(i);
             }
         });

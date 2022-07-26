@@ -52,7 +52,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + COLUMN_TOPIC + " TEXT NOT NULL, "
                 + COLUMN_DATE + " TEXT NOT NULL,"
                 + COLUMN_SCORE + " REAL,"
-                + COLUMN_TIME + " TEXT DEFAULT '5:00' NOT NULL)";
+                + COLUMN_TIME + " REAL DEFAULT 10 NOT NULL)";
 
         String table2 = "CREATE TABLE " + TABLE_NAME_QUESTION + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -279,8 +279,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             int id = cursor.getInt(0);
             String topic = cursor.getString(1);
             String date = cursor.getString(2);
-
-            quizModelList.add(new QuizModel(id, topic, date));
+            Double score = cursor.getDouble(3);
+            double countDown = cursor.getDouble(4);
+            quizModelList.add(new QuizModel(id, topic, date, score, countDown));
         }
 
         cursor.close();

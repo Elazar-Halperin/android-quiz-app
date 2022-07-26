@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     // access this field from other classes.
-    public static final String isAdminUserOrSimple = "userType";
+    public static final String isAdminUserOrSimple = "USERTYPE";
     FloatingActionButton fab_addQuiz;
     FloatingActionButton fab_changeUser;
     RecyclerView rv_quizContainer;
@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(getApplicationContext(), QuestionsActivity.class);
+                    i.putExtra(isAdminUserOrSimple, getIntent().getIntExtra(isAdminUserOrSimple, 0));
+                    i.putExtra(QuizRecyclerViewAdapter.QUIZ_ID, -1);
                     startActivity(i);
                 }
             });

@@ -10,12 +10,34 @@ public class QuizModel {
     int id;
     String topic;
     String date;
+    double countDownTimer;
+    double score;
+
+    public double getCountDownTimer() {
+        return countDownTimer;
+    }
+
+    public void setCountDownTimer(double countDownTimer) {
+        this.countDownTimer = countDownTimer;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+
     List<QuestionModel> questionModelList;
-    public QuizModel(int id, String name, String date) {
+    public QuizModel(int id, String name, String date, double score, double countDownTimer) {
         this.id = id;
         this.topic = name;
         this.date = date;
         this.questionModelList = new ArrayList<>();
+        this.score = score;
+        this.countDownTimer = countDownTimer;
     }
     public int getId() {
         return id;
